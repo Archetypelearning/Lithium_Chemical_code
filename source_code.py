@@ -80,7 +80,7 @@ def input_data():
     """
     print("\nDefine whether the leak is steady state or time dependent: ")
     print("1. S.S (boundary condition keep constant with time, unique values)")
-    print("2. T.D (boundary condition changes with respect to time, time series data imported from .xlsx file)")
+    print("2. T.D (boundary condition changes with respect to time, time series data imported from (Input_Data.xlsx) file)")
     transient_choice = input("Enter the number corresponding to your choice (1 or 2): ")
     if transient_choice == '1':
         upstream_pressure = float(input("Enter the pressure in the upstream container (bar): "))
@@ -91,6 +91,7 @@ def input_data():
         break_size = float(input("Enter the break cross section size (m²): "))
         drainage_rate = float(input("Enter the lithium drainage rate from the reaction volume (kg/s): "))
         gas_flow_rate = float(input("Enter the gas flow rate over the lithium pool (kg/s): "))
+
         transient_time = int(input("Enter the total transient time (s): "))
         time_values = list(range(0, transient_time + 1, 1))
         data_handler = {
