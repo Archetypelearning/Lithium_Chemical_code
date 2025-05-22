@@ -17,7 +17,7 @@ License: Non-commercial, Attribution-Required (see LICENSE)
 import math
 import pandas as pd
 import numpy as np
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 # =============================================================
 # SECTION 1: DOMAIN SELECTION AND GEOMETRY CALCULATION
