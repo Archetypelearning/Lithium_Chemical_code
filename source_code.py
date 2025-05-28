@@ -19,6 +19,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.graph_objs as go
+import os
 
 st.set_page_config(page_title="Lithium-Water Reaction Estimator", layout="centered")
 
@@ -36,6 +37,21 @@ This app models the chemical interaction between lithium and water, allowing you
 - Time-stepped simulation of the lithium-water reaction
 - Interactive output and plots
 """)
+
+# ================= LICENSE AGREEMENT ENFORCEMENT =================
+LICENSE_PATH = os.path.join(os.path.dirname(__file__), 'LICENSE')
+with open(LICENSE_PATH, 'r', encoding='utf-8') as f:
+    license_text = f.read()
+
+st.header("License Agreement")
+with st.expander("View License Terms", expanded=True):
+    st.code(license_text, language=None)
+agree = st.checkbox("I have read and agree to the terms of the above license.")
+if not agree:
+    st.warning("You must agree to the license terms to use this application.")
+    st.stop()
+
+
 
 # =============================================================
 # SECTION 1: DOMAIN SELECTION AND GEOMETRY CALCULATION
